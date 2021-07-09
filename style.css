@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   background-color: black;
+  min-height: 100vh;
 }
 
 .container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
   animation: animate 4s linear infinite /* run color cycle infinite */;
 }
 /* ANIMATION */
@@ -24,10 +24,20 @@ body {
     filter: hue-rotate(360deg);
   }
 }
+/* row */
+.row {
+  margin-top: -33px;
+  margin-left: -60px; /* hexa width 120px  */
+  display: inline-flex;
+}
+.row:nth-child(even) {
+  margin-left: 1px;
+}
 .hexagon {
   position: relative;
+  margin: 1px;
   height: 110px;
   width: 120px;
-  background-color: green;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #111;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
